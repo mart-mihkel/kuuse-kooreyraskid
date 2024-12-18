@@ -1,0 +1,14 @@
+services:
+  rstudio:
+    build:
+      context: .
+    ports:
+      - 8787:8787
+    environment:
+      PASSWORD: rstudio
+    volumes:
+      - .:/home/rstudio/app
+      - r-lib:/usr/local/lib/R
+
+volumes:
+  r-lib:
